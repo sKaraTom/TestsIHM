@@ -1,3 +1,49 @@
 <h1>
   {{title}}
 </h1>
+<i class="fa fa-american-sign-language-interpreting fa-4x" aria-hidden="true"> </i>  
+<nav>
+    <a routerLink="/accueil" routerLinkActive="active">Accueil</a>
+    <a routerLink="/admin" routerLinkActive="active">Admin</a>
+  </nav>
+
+
+<!--
+<p-chart type="bar" 
+  [data]="data" [options]="options"></p-chart>
+-->
+
+<router-outlet></router-outlet>
+
+
+<button type="text" pButton label="Custom Target" (click)="op.toggle($event)">
+  <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Contact</a></button>
+
+
+  <p-overlayPanel #op>
+      <router-outlet name="popup"></router-outlet>
+  </p-overlayPanel>
+  
+  <div id="testTransition">
+  <sm-transition #transition>
+    <!-- <sm-card class="ui card" image="http://semantic-ui.com/images/avatar2/large/kristy.png">  
+    </sm-card>-->
+     <div id="texteAnim">  {{motAnime}}  </div>
+</sm-transition>
+ </div>
+<sm-button (click)="transition.show({
+    animation : 'scale',
+    duration : '0.5s',
+    onComplete : changerMotAnime() 
+
+  });">Horizontal Flip</sm-button>
+
+   <div id="testTransition">
+  <sm-transition #transition2>
+    <!-- <sm-card class="ui card" image="http://semantic-ui.com/images/avatar2/large/kristy.png">  
+    </sm-card>-->
+     <div id="texteAnim"> {{motAnime}} </div>
+</sm-transition>
+ </div>
+<sm-button (click)="transition2.show('scale', transition2.show('scale'))">animation</sm-button>
+ 

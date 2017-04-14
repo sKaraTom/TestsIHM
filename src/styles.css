@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+md-radio-button.md-default-theme .md-on, md-radio-button .md-on {
+  background-color:black;
+}
+md-radio-button.md-default-theme.md-checked .md-off, md-radio-button.md-checked .md-off {
+  border-color: red;
+}
+
+md-checkbox.md-checked.green .md-icon {
+ background-color:deeppink;
+}
+
+#testTransition {
+  height:200px;
+width:200px;
+  margin-right: auto;
+  margin-left: auto;
+  display : flex;
+  justify-content: center;
+}
+
+#texteAnim {
+
+/* background-color:cornflowerblue; */
+height:200px;
+width:200px;
+text-align: center;
+display: flex;
+justify-content: center;
+vertical-align: center;
+line-height:200px;
+font-size: 5em;
+}
